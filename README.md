@@ -19,7 +19,7 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 | Lecture | Topic | Status | Reading Material |
 |:---:|:---|:---:|:---:|
 | **01** | **Introduction to Compilers & Language Translation**<br>*(Language Processors, Compiler vs Interpreter, Hybrid Compilation, Language-Processing System, 6 Compiler Phases, Symbol Table, Passes, Evolution, Architecture Optimizations, Static vs Dynamic)* | ✅ Completed | [Lecture 1 Notes](./Lecture%201/README.md) |
-| **02** | Lexical Analysis (Scanning, Regular Expressions, Finite Automata, Lex/Flex) | ⏳ Upcoming | — |
+| **02** | **Lexical Analysis, Input Buffering & Regular Expressions**<br>*(Role of Lexical Analyzer, Tokens, Patterns, Lexemes, Attributes, Input Buffering, Sentinels, Formal Language Theory, Regular Expressions, Regular Definitions, Lex/Flex, Quantifiers & Lookarounds)* | ✅ Completed | [Lecture 2 Notes](./Lecture%202/README.md) |
 | **03** | Syntax Analysis: Context-Free Grammars & Top-Down Parsing (LL(1)) | ⏳ Upcoming | — |
 | **04** | Syntax Analysis: Bottom-Up Parsing (LR, SLR, LALR, CLR, Yacc/Bison) | ⏳ Upcoming | — |
 | **05** | Semantic Analysis & Syntax-Directed Translation (SDT / SDD) | ⏳ Upcoming | — |
@@ -41,18 +41,24 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 
 ---
 
-## 🚀 Getting Started with Lecture 1
+## 🚀 Featured Reading Modules
 
-Explore the complete master guide for **Lecture 1**:
-👉 **[Lecture 1: Introduction to Compilers & Language Translation](./Lecture%201/README.md)**
-
-Includes:
-- Detailed breakdown of all 6 compiler phases
+### 📘 [Lecture 1: Introduction to Compilers & Language Translation](./Lecture%201/README.md)
+- Complete breakdown of all 6 compiler phases
 - End-to-end trace of `position = initial + rate * 60`
-- Complete solutions to Dragon Book Section 1.1 exercises
-- 10-language classification matrix (Dragon Book Exercise 1.3.1)
-- Interactive quiz and university exam revision cards
-- 11 architectural diagrams and flowcharts
+- Solutions to Dragon Book Section 1.1 exercises & 10-language matrix
+- 11 architectural diagrams, flowcharts, and exam revision cards
+
+### 📗 [Lecture 2: Lexical Analysis, Input Buffering & Regular Expressions](./Lecture%202/README.md)
+- In-depth role of Scanner, `getNextToken()`, and Symbol Table interplay
+- The Core Trinity: Tokens, Patterns, and Lexemes with concrete traces
+- Double-buffering scheme and the sentinel (`eof`) single-test optimization
+- Formal language foundations (Alphabets, Strings, Operations on Languages)
+- Regular Expressions & Regular Definitions (inductive basis, precedence, algebraic laws)
+- The Lex/Flex generator ecosystem and conflict resolution rules (Longest Match & First Match)
+- Comprehensive practical regex guide (Greedy vs Lazy vs Possessive, Lookarounds, Pitfalls)
+- Full step-by-step solutions to Dragon Book Section 3.1 & 3.3 exercises (3.1.1–3.1.2, 3.3.1–3.3.12)
+- 15 architectural diagrams, PDF screenshots, and Master Exam Revision Card
 
 ---
 
@@ -65,6 +71,11 @@ CSE420-Compiler-Design/
 │   ├── README.md           # Master Reading Material for Lecture 1
 │   ├── lecture1.md         # Companion Reading File
 │   └── images/             # Architectural Diagrams & Flowcharts
+├── Lecture 2/
+│   ├── README.md           # Master Reading Material for Lecture 2
+│   ├── lecture2.md         # Companion Reading File
+│   └── images/             # Architectural Diagrams, Scans & Infographics
 └── pdfs/
-    └── Lecture 1/          # Source Lecture Slides & Textbook Excerpts
+    ├── Lecture 1/          # Source Lecture Slides & Textbook Excerpts
+    └── Lecture 2/          # Source Lecture Slides, Dragon Book Ch 3 & Regex Guide
 ```
