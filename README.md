@@ -20,7 +20,7 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 |:---:|:---|:---:|:---:|
 | **01** | **Introduction to Compilers & Language Translation**<br>*(Language Processors, Compiler vs Interpreter, Hybrid Compilation, Language-Processing System, 6 Compiler Phases, Symbol Table, Passes, Evolution, Architecture Optimizations, Static vs Dynamic)* | ✅ Completed | [Lecture 1 Notes](./Lecture%201/README.md) |
 | **02** | **Lexical Analysis, Input Buffering & Regular Expressions**<br>*(Role of Lexical Analyzer, Tokens, Patterns, Lexemes, Attributes, Input Buffering, Sentinels, Formal Language Theory, Regular Expressions, Regular Definitions, Lex/Flex, Quantifiers & Lookarounds)* | ✅ Completed | [Lecture 2 Notes](./Lecture%202/README.md) |
-| **03** | Syntax Analysis: Context-Free Grammars & Top-Down Parsing (LL(1)) | ⏳ Upcoming | — |
+| **03** | **Syntax Analysis: Context-Free Grammars & Parsing Foundations**<br>*(Role of Parser, Demand-Driven getNextToken, Universal vs Top-Down vs Bottom-Up, CFG 4-Tuple, Derivations, Parse Trees vs AST, Ambiguity & Undecidability, Dangling-Else, Left Recursion Elimination, Left Factoring, 4 Error Recovery Strategies)* | ✅ Completed | [Lecture 3 Notes](./Lecture%203/README.md) |
 | **04** | Syntax Analysis: Bottom-Up Parsing (LR, SLR, LALR, CLR, Yacc/Bison) | ⏳ Upcoming | — |
 | **05** | Semantic Analysis & Syntax-Directed Translation (SDT / SDD) | ⏳ Upcoming | — |
 | **06** | Type Systems, Type Checking & Runtime Storage Environments | ⏳ Upcoming | — |
@@ -60,6 +60,18 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 - Full step-by-step solutions to Dragon Book Section 3.1 & 3.3 exercises (3.1.1–3.1.2, 3.3.1–3.3.12)
 - 15 architectural diagrams, PDF screenshots, and Master Exam Revision Card
 
+### 📙 [Lecture 3: Syntax Analysis — Context-Free Grammars, Derivations, Parse Trees, Ambiguity & Error Recovery](./Lecture%203/README.md)
+- Role of Parser in compiler model and `getNextToken()` demand-driven consumer-producer loop
+- Taxonomy of Parsers: Universal ($O(n^3)$ CYK/Earley), Top-Down (LL), and Bottom-Up (LR)
+- Context-Free Grammars formal 4-tuple $G = (V, \Sigma, R, S)$ and why regex fails on balanced syntax
+- Derivations (Leftmost vs Rightmost) and Parse Tree geometry (Frontier / Yield, CST vs AST)
+- Grammar Ambiguity, precedence distortion, proof methods, and undecidability
+- The Dangling-Else problem and Matched/Open grammar refactoring
+- Systematic Left Recursion Elimination (Immediate & Indirect algorithms) and Left Factoring
+- The 4 syntax error recovery strategies (Panic-Mode, Phrase-Level, Error Productions, Global Correction) and Viable-Prefix Property
+- Complete step-by-step solutions to Dragon Book Exercises 4.2.1 through 4.2.5
+- 14 architectural diagrams, textbook scans, and Master Exam Revision Card
+
 ---
 
 ## 📂 Repository Structure
@@ -75,7 +87,12 @@ CSE420-Compiler-Design/
 │   ├── README.md           # Master Reading Material for Lecture 2
 │   ├── lecture2.md         # Companion Reading File
 │   └── images/             # Architectural Diagrams, Scans & Infographics
+├── Lecture 3/
+│   ├── README.md           # Master Reading Material for Lecture 3
+│   ├── lecture3.md         # Companion Reading File
+│   └── images/             # Architectural Diagrams, Scans & Infographics
 └── pdfs/
     ├── Lecture 1/          # Source Lecture Slides & Textbook Excerpts
-    └── Lecture 2/          # Source Lecture Slides, Dragon Book Ch 3 & Regex Guide
+    ├── Lecture 2/          # Source Lecture Slides, Dragon Book Ch 3 & Regex Guide
+    └── Lecture 3/          # Source Lecture Slides, Dragon Book Ch 4 (4.1 & 4.2)
 ```
