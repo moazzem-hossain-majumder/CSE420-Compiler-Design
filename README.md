@@ -21,7 +21,7 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 | **01** | **Introduction to Compilers & Language Translation**<br>*(Language Processors, Compiler vs Interpreter, Hybrid Compilation, Language-Processing System, 6 Compiler Phases, Symbol Table, Passes, Evolution, Architecture Optimizations, Static vs Dynamic)* | ✅ Completed | [Lecture 1 Notes](./Lecture%201/README.md) |
 | **02** | **Lexical Analysis, Input Buffering & Regular Expressions**<br>*(Role of Lexical Analyzer, Tokens, Patterns, Lexemes, Attributes, Input Buffering, Sentinels, Formal Language Theory, Regular Expressions, Regular Definitions, Lex/Flex, Quantifiers & Lookarounds)* | ✅ Completed | [Lecture 2 Notes](./Lecture%202/README.md) |
 | **03** | **Syntax Analysis: Context-Free Grammars & Parsing Foundations**<br>*(Role of Parser, Demand-Driven getNextToken, Universal vs Top-Down vs Bottom-Up, CFG 4-Tuple, Derivations, Parse Trees vs AST, Ambiguity & Undecidability, Dangling-Else, Left Recursion Elimination, Left Factoring, 4 Error Recovery Strategies)* | ✅ Completed | [Lecture 3 Notes](./Lecture%203/README.md) |
-| **04** | Syntax Analysis: Bottom-Up Parsing (LR, SLR, LALR, CLR, Yacc/Bison) | ⏳ Upcoming | — |
+| **04** | **Syntax Analysis: Bottom-Up Shift-Reduce Parsing & LR Foundations**<br>*(Reductions, Handle Pruning, Stack Invariant, 4 Actions, Trace Walkthroughs, Shift/Reduce & Reduce/Reduce Conflicts, Dangling-Else, Viable Prefixes, LR Family Hierarchy, SLR, LALR, Yacc/Bison)* | ✅ Completed | [Lecture 4 Notes](./Lecture%204/README.md) |
 | **05** | Semantic Analysis & Syntax-Directed Translation (SDT / SDD) | ⏳ Upcoming | — |
 | **06** | Type Systems, Type Checking & Runtime Storage Environments | ⏳ Upcoming | — |
 | **07** | Intermediate Code Generation (Three-Address Code, Quadruples, Triples) | ⏳ Upcoming | — |
@@ -72,6 +72,19 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 - Complete step-by-step solutions to Dragon Book Exercises 4.2.1 through 4.2.5
 - 14 architectural diagrams, textbook scans, and Master Exam Revision Card
 
+### 📕 [Lecture 4: Syntax Analysis — Bottom-Up Shift-Reduce Parsing, Handle Pruning & LR Foundations](./Lecture%204/README.md)
+- Foundations of Bottom-Up Parsing and constructing rightmost derivations in reverse
+- Mathematical definition of Handles ($S \Rightarrow^*_{rm} \alpha A w \Rightarrow_{rm} \alpha \beta w$) and the Handle Pruning algorithm
+- Shift-Reduce parser architecture, stack conventions, and the 4 fundamental actions (Shift, Reduce, Accept, Error)
+- Proof of the Stack-Top Handle Invariant across the 2 topological derivation cases
+- Full execution traces for $id_1 * id_2$ and $(id) + id$ matching university lecture slides
+- Detailed conflict diagnostics: Shift/Reduce (Dangling-Else, precedence) vs Reduce/Reduce (Procedure vs Array)
+- Viable prefixes and Knuth's theorem proving regular-language recognition via DFAs
+- Complete taxonomy of the LR Family: LR(0), SLR(1), LALR(1), and Canonical LR(1) with core-merging conflict theorems
+- Industrial parser generators (Yacc/Bison spec structure, conflict debugging with `y.output`, and error tokens)
+- Complete step-by-step solutions to Dragon Book Exercises 4.5.1, 4.5.2, and 4.5.3 (a & b)
+- 15 architectural diagrams, textbook scans, and Master Exam Revision Card
+
 ---
 
 ## 📂 Repository Structure
@@ -91,8 +104,13 @@ CSE420-Compiler-Design/
 │   ├── README.md           # Master Reading Material for Lecture 3
 │   ├── lecture3.md         # Companion Reading File
 │   └── images/             # Architectural Diagrams, Scans & Infographics
+├── Lecture 4/
+│   ├── README.md           # Master Reading Material for Lecture 4
+│   ├── lecture4.md         # Companion Reading File
+│   └── images/             # Architectural Diagrams, Scans & Infographics
 └── pdfs/
     ├── Lecture 1/          # Source Lecture Slides & Textbook Excerpts
     ├── Lecture 2/          # Source Lecture Slides, Dragon Book Ch 3 & Regex Guide
-    └── Lecture 3/          # Source Lecture Slides, Dragon Book Ch 4 (4.1 & 4.2)
+    ├── Lecture 3/          # Source Lecture Slides, Dragon Book Ch 4 (4.1 & 4.2)
+    └── Lecture 4/          # Source Lecture Slides & Dragon Book Ch 4 (4.5 & 4.6)
 ```
