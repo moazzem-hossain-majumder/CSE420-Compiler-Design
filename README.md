@@ -22,8 +22,8 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 | **02** | **Lexical Analysis, Input Buffering & Regular Expressions**<br>*(Role of Lexical Analyzer, Tokens, Patterns, Lexemes, Attributes, Input Buffering, Sentinels, Formal Language Theory, Regular Expressions, Regular Definitions, Lex/Flex, Quantifiers & Lookarounds)* | ✅ Completed | [Lecture 2 Notes](./Lecture%202/README.md) |
 | **03** | **Syntax Analysis: Context-Free Grammars & Parsing Foundations**<br>*(Role of Parser, Demand-Driven getNextToken, Universal vs Top-Down vs Bottom-Up, CFG 4-Tuple, Derivations, Parse Trees vs AST, Ambiguity & Undecidability, Dangling-Else, Left Recursion Elimination, Left Factoring, 4 Error Recovery Strategies)* | ✅ Completed | [Lecture 3 Notes](./Lecture%203/README.md) |
 | **04** | **Syntax Analysis: Bottom-Up Shift-Reduce Parsing & LR Foundations**<br>*(Reductions, Handle Pruning, Stack Invariant, 4 Actions, Trace Walkthroughs, Shift/Reduce & Reduce/Reduce Conflicts, Dangling-Else, Viable Prefixes, LR Family Hierarchy, SLR, LALR, Yacc/Bison)* | ✅ Completed | [Lecture 4 Notes](./Lecture%204/README.md) |
-| **05** | Semantic Analysis & Syntax-Directed Translation (SDT / SDD) | ⏳ Upcoming | — |
-| **06** | Type Systems, Type Checking & Runtime Storage Environments | ⏳ Upcoming | — |
+| **05** | **Syntax Analysis: Introduction to Simple LR (SLR) Parsing & LR(0) Automata**<br>*(LR Items, Augmented Grammar, CLOSURE & GOTO, Canonical LR(0) Collection, State Transition Diagram, LR(0) Table Conflicts, FIRST & FOLLOW Sets, SLR(1) Parsing Table Construction, SLR Parser Execution Moves)* | ✅ Completed | [Lecture 5 Notes](./Lecture%205/README.md) |
+| **06** | Semantic Analysis & Syntax-Directed Translation (SDT / SDD) | ⏳ Upcoming | — |
 | **07** | Intermediate Code Generation (Three-Address Code, Quadruples, Triples) | ⏳ Upcoming | — |
 | **08** | Machine-Independent Code Optimization (Constant Folding, Dead Code, Loops) | ⏳ Upcoming | — |
 | **09** | Data-Flow Analysis & Control-Flow Graphs (CFG) | ⏳ Upcoming | — |
@@ -85,6 +85,20 @@ This repository contains lecture-by-lecture reading materials, theoretical break
 - Complete step-by-step solutions to Dragon Book Exercises 4.5.1, 4.5.2, and 4.5.3 (a & b)
 - 15 architectural diagrams, textbook scans, and Master Exam Revision Card
 
+### 📘 [Lecture 5: Syntax Analysis — Introduction to Simple LR (SLR) Parsing & LR(0) Automata](./Lecture%205/README.md)
+- Complete foundation of Simple LR (SLR) parsing and why LR parsers dominate industrial front ends
+- Anatomy of $LR(0)$ items, the dot ($\cdot$) lifecycle, and integer-pair representation
+- Kernel vs Non-Kernel item partitioning and parser generator memory compression
+- The augmented grammar ($S' \to S$) and the formal acceptance criterion
+- Fixed-point algorithms for $\text{CLOSURE}(I)$ and $\text{GOTO}(I, X)$ with boolean tracking arrays
+- Full step-by-step derivation of the 12 canonical $LR(0)$ states ($I_0 \dots I_{11}$) for the expression grammar
+- Diagnostic breakdown of pure $LR(0)$ table conflicts in State 2 and State 9 under token `*`
+- First & Follow set computation and mathematical proof of conflict elimination via $* \notin \text{FOLLOW}(E)$
+- Construction and verification of the deterministic 12-state by 9-column master SLR(1) parsing table
+- Line-by-line runtime execution traces on $id * id \$$ and parenthesized expressions $(id + id) * id \$$
+- Critical analysis of SLR(1) limitations on pointer assignment syntax and the bridge to LALR(1) / Canonical LR(1)
+- 14 architectural diagrams, slide captures, textbook scans, and Master Exam Revision Card
+
 ---
 
 ## 📂 Repository Structure
@@ -108,9 +122,14 @@ CSE420-Compiler-Design/
 │   ├── README.md           # Master Reading Material for Lecture 4
 │   ├── lecture4.md         # Companion Reading File
 │   └── images/             # Architectural Diagrams, Scans & Infographics
+├── Lecture 5/
+│   ├── README.md           # Master Reading Material for Lecture 5
+│   ├── lecture5.md         # Companion Reading File
+│   └── images/             # Architectural Diagrams, Scans & Infographics
 └── pdfs/
     ├── Lecture 1/          # Source Lecture Slides & Textbook Excerpts
     ├── Lecture 2/          # Source Lecture Slides, Dragon Book Ch 3 & Regex Guide
     ├── Lecture 3/          # Source Lecture Slides, Dragon Book Ch 4 (4.1 & 4.2)
-    └── Lecture 4/          # Source Lecture Slides & Dragon Book Ch 4 (4.5 & 4.6)
+    ├── Lecture 4/          # Source Lecture Slides & Dragon Book Ch 4 (4.5 & 4.6)
+    └── Lecture 5/          # Source Lecture Slides & Dragon Book Ch 4 (4.6.1 & 4.6.2)
 ```
